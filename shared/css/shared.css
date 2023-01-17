@@ -2,12 +2,62 @@
 /*=============================================
  * body
  *=============================================*/
+a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.bg-white {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.txt-white {
+  color: #fff !important;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-pc {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .center-x-pc {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.center-y {
+  display: flex;
+  align-items: center;
+}
+
+.center-x-y {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #000;
-  letter-spacing: 0.1em;
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  letter-spacing: 0.12em;
+  font-family: "Noto Serif JP", serif;
   min-width: inherit;
   min-height: inherit;
   max-height: 100%;
@@ -16,7 +66,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 32px;
     letter-spacing: 1.1px;
     background: url("../img/shared/bg.jpg") repeat top center;
@@ -76,23 +126,21 @@ body.nav--opened #menu_toggle * {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   font-size: 4vw;
-  letter-spacing: 0;
-  line-height: 3.2;
-  background: url("../img/shared/bg_red.jpg");
+  letter-spacing: 3px;
+  line-height: 2.8;
+  background: #222222;
   position: relative;
-  border-radius: 100px;
   transition: ease 0.3s;
 }
 .btn-link:before {
   content: "";
   position: absolute;
-  background: url("../img/shared/arrow.png") no-repeat center/100% auto;
-  width: 9px;
-  height: 11px;
+  background: #ab2733;
+  width: 25px;
+  height: 2px;
   top: 50%;
-  right: 7%;
+  right: -3%;
   transform: translateY(-50%);
 }
 .btn-link:hover {
@@ -101,17 +149,16 @@ body.nav--opened #menu_toggle * {
 }
 @media only screen and (min-width: 768px) {
   .btn-link {
-    font-size: 25px;
+    font-size: 18px;
+    width: 450px;
+    height: 50px;
   }
   .btn-link:before {
-    width: 15px;
-    height: 18px;
-    right: 29px;
+    width: 29px;
+    height: 2px;
+    right: -17px;
+    z-index: 1;
   }
-}
-
-.bg-brown {
-  background: url("../img/shared/bg_brown.jpg");
 }
 
 /*=============================================
@@ -142,54 +189,147 @@ header {
 .logo {
   position: absolute;
   z-index: 2;
-  width: 52%;
-  top: 10vw;
-  left: 24%;
+  width: 28%;
+  top: 0;
+  left: 0;
 }
 
 h1 {
   position: absolute;
   z-index: 2;
   text-align: center;
-  bottom: 6vw;
+  bottom: -8vw;
   width: 100%;
   padding: 0 4%;
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 2.67vw;
   left: 0;
-  text-shadow: 0 0 5px #000000;
   color: #999999;
   z-index: 1;
 }
 
 @media only screen and (min-width: 768px) {
   header {
-    height: 800px;
+    position: relative;
   }
   header #key {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
   }
   header #key .key-slide,
 header #key .key-slide * {
     width: 100%;
     height: 100%;
   }
-  .logo,
-h1 {
-    left: 50%;
-    transform: translateX(-50%);
+  header #key .key-slide img {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
-  .logo {
-    top: 87px;
-    width: 261px;
+  header .header-left {
+    width: 320px;
+    height: 900px;
+    position: relative;
+    z-index: 1;
+    background: url(../img/shared/header_bg.png);
+    padding: 70px 0 0 0;
+  }
+  header .header-left .logo-pc {
+    padding-left: 61px;
+  }
+  header .header-left .header-menu-pc ul.nav1 {
+    justify-content: center;
+    border-bottom: 1px solid #595959;
+    width: 246px;
+    margin: 71px auto 0;
+    padding-bottom: 26px;
+  }
+  header .header-left .header-menu-pc ul.nav1 li {
+    padding: 0 6.4px;
+    letter-spacing: 4px;
+    position: relative;
+    transition: 0.33s;
+  }
+  header .header-left .header-menu-pc ul.nav1 li.active a {
+    color: #888888;
+  }
+  header .header-left .header-menu-pc ul.nav1 li.active:after {
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 23px;
+    width: 1px;
+    height: 17px;
+    background: #888888;
+  }
+  header .header-left .header-menu-pc ul.nav1 li:hover:after {
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 23px;
+    width: 1px;
+    height: 17px;
+    background: #888888;
+    transition: 0.3s;
+  }
+  header .header-left .header-menu-pc ul.nav1 li:hover a {
+    color: #888888;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  header .header-left .header-menu-pc ul.nav1 li a {
+    color: #fff;
+  }
+  header .header-left .header-menu-pc .nav2 {
+    margin-top: 29px;
+    width: 249px;
+    margin: 29px auto 0;
+  }
+  header .header-left .header-menu-pc .nav2 .btn-link {
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+  }
+  header .header-left .header-menu-pc .nav2 .header-banner-pc {
+    margin-top: 31px;
+    margin-bottom: 10px;
+  }
+  header .header-left .header-menu-pc .nav2 .header-banner-pc .btn-link {
+    display: block;
+    background: unset;
+  }
+  header .header-left .header-menu-pc .nav2 .header-banner-pc .btn-link p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  header .header-left .header-menu-pc .nav2 .popup {
+    margin-top: 12px;
+  }
+  header .header-left .header-menu-pc .nav2 .social {
+    justify-content: space-between;
+    margin: 20px auto 0;
+    width: 161px;
+  }
+  header .header-left .header-menu-pc .nav2 li:last-child {
+    margin: 19px auto 0;
+    justify-content: center;
+    border-top: 1px solid #4d4a49;
+    padding-top: 17px;
   }
   h1 {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 30px;
     bottom: auto;
-    top: 15px;
+    top: 101%;
+    text-align: left;
     padding: 0;
+    left: 32px;
   }
 }
 .fixed_reserve {
@@ -240,11 +380,6 @@ h1 {
   opacity: 0.8;
 }
 
-@media only screen and (min-width: 768px) {
-  main {
-    margin-top: 90px;
-  }
-}
 /*=============================================
  * key
  *=============================================*/
@@ -299,6 +434,7 @@ hr {
 }
 
 .nav-fixed {
+  display: none !important;
   position: fixed;
   background: url("../img/shared/menu_bg.png");
   top: 0;
@@ -354,13 +490,63 @@ hr {
   overflow-y: auto;
   z-index: 999;
   padding: 60px 4% 150px;
-  background: url("../img/shared/menu_bg.png");
+  background: url(../img/shared/menu_toggle_bg.png);
   transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
 }
 #menu_toggle .gnav {
   margin-left: 6%;
+}
+#menu_toggle .gnav > li {
+  border-bottom: 1px solid #797674;
+  padding: 1px 0;
+  position: relative;
+}
+#menu_toggle .gnav > li:nth-child(1) {
+  padding-bottom: 5vw;
+}
+#menu_toggle .gnav > li.no-border {
+  border: none;
+  margin-top: 5vw;
+}
+#menu_toggle .gnav > li.bg-white {
+  margin-bottom: 3vw;
+}
+#menu_toggle .gnav > li.bg-white p > a {
+  color: #000;
+}
+#menu_toggle .gnav > li.social {
+  gap: 6%;
+}
+#menu_toggle .gnav > li.social a {
+  display: block;
+  width: 9%;
+}
+#menu_toggle .gnav > li a {
+  color: #fff;
+  text-align: center;
+}
+#menu_toggle .gnav > li a::before {
+  z-index: 1;
+}
+#menu_toggle .gnav > li a img {
+  width: 100%;
+}
+#menu_toggle .gnav > li a p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+#menu_toggle .gnav > li.flex {
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+#menu_toggle .gnav > li.flex span {
+  font-size: 5vw;
 }
 #menu_toggle .gnav2 {
   padding-top: 20px;
@@ -658,6 +844,7 @@ footer .cookie-link a:hover:before {
 @media only screen and (min-width: 768px) {
   #gmap {
     height: 650px;
+    margin-top: 600px;
   }
 }
 #pagetop {
@@ -996,11 +1183,6 @@ img {
 
 em {
   font-style: normal;
-}
-
-.bg2 {
-  color: #fff;
-  background: url("../img/shared/bg2_sp.jpg") repeat-y center/100% auto;
 }
 
 @media only screen and (min-width: 768px) {

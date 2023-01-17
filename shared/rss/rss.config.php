@@ -1,6 +1,8 @@
 <?php
 $_url = array();
-$_url[1] = "http://test.foodconnection.jp/blog2/feed/";
+$_url[1] = "https://www.yakitori-watanabe.jp/fcblog/feed/";
+// $_url[1] = "http://test.foodconnection.jp/blog2/feed/";
+// $_url[1] = "http://www.kyoazuki-tsururin.jp/fcblog/feed/";
 
 
 
