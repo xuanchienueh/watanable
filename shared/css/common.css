@@ -238,7 +238,7 @@ header > .wrap{position:relative;z-index:2;width:1100px}
  * <section>
  *=============================================*/
 section{clear:both;margin:auto;width:100%;position:relative}
-main{clear:both;width:100%;position:relative;overflow:hidden}
+main{clear:both;width:100%;position:relative;overflow:hidden;padding-bottom: 50px;}
 /*=============================================
  * <footer>
  *=============================================*/
@@ -332,7 +332,7 @@ a.bx-next,a.bx-next:active,a.bx-next:focus,a.bx-next:hover,a.bx-next:hover img,a
 .tac{text-align:center}
 .tal{text-align:left}
 .tar{text-align:right}
-.pc{display:none}
+.pc{display:none;}
 @media only screen and (min-width:768px){.sp{display:none!important}.pc{display:block!important}}
 @media only screen and (max-width:320px){html.responsive{min-width:320px!important}}
 @-moz-document url-prefix(){.txt-vertical .txt-latin{position:relative;left:4px}}

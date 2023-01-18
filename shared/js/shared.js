@@ -180,3 +180,11 @@ window.addEventListener("resize", function() {
 		passive: false
 });
 // END: fix scroll iOS
+
+// close menu toggle 
+const close_menu_toggle = document.querySelector('.close-menu-toggle')
+const body = document.querySelector('body')
+close_menu_toggle.addEventListener('click', function(){ 
+	body.classList.remove('navOpen')
+	body.classList.remove('nav--opened')
+})
