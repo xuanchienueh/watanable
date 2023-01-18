@@ -1067,6 +1067,7 @@ img {
 
 .bg_parallax {
   position: relative;
+  height: 600px;
 }
 
 .img_parallax {

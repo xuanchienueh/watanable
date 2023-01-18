@@ -313,6 +313,48 @@
 					</div>
 				</div>
 			</div>
+			<div id="sec4">
+				<div class="bg_parallax">
+					<div class="img_parallax">
+						<picture>
+							<source media="(min-width: 768px)" srcset="./shared/img/index/sec4_img1.jpg">
+							<img src="./shared/img/index/sec4_img1_sp.jpg" alt="店内" width="700" height="650">
+						</picture>
+					</div>
+				</div>
+			<div class="wrap">
+					<h2 class="txt-center">店内の様子</h2>
+					<div class="sec4-slide">
+						<div class="sec4-slide-inner">
+							<div class="slide slide1">
+								<div class="sec4-img2"><img src="./shared/img/index/sec4_img2.jpg" alt="カウンター" width="800" height="450"></div>
+								<div class="slide-box-txt slide-box-txt1">
+									<h3 class="txt-center txt-vertical-pc">カウンター</h3>
+									<p>全4席のカウンターは、間近で調理風景を愉しめるライブ感満載の特等席。思い思いの時間をお過ごしいただけます。 </p>
+								</div>
+							</div>
+							<div class="slide slide2">
+								<div class="sec4-img3"><img src="./shared/img/index/sec4_img3.jpg" alt="テーブル"></div>
+								<div class="slide-box-txt slide-box-txt2">
+									<h3 class="txt-center txt-vertical-pc">テーブル</h3>
+									<p>ゆったりと寛げる半個室タイプのテーブル席。<br>2名様から最大6名様までご利用いただけるお席です。</p>
+								</div>
+							</div>
+							<div class="slide slide3">
+								<div class="sec4-img4"><img src="./shared/img/index/sec4_img4.jpg" alt="個室"></div>
+							<div class="slide-box-txt slide-box-txt1">
+									<h3 class="txt-center txt-vertical-pc">個室</h3>
+									<p>3名様から最大8名様まで対応の完全個室です。<br class="sp">周りを気にせずプライベートなお食事をお愉しみいただけます。</p>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="sec4-group">
+						<p class="right"><img src="./shared/img/index/sec4_img5.jpg" alt="鶏"></p>
+						<p class="left"><img src="./shared/img/index/sec4_img6.jpg" alt="看板"></p>
+					</div>
+			</div>
+			</div>
 
 			<!-- <div id="sec4">
 				<div class="wrap">
@@ -498,19 +540,46 @@
 					$(this).slick("slickPlay");
 				});
 
-			$(".slick-fade")
+			// $(".sec4-slide-inner")
+			// 	.slick({
+			// 		fade: true,
+			// 		autoplay: true,
+			// 		arrows: false,
+			// 		dots: true,
+			// 		pauseOnHover: false,
+			// 		pauseOnFocus: false,
+			// 		speed: 1000,
+			// 	})
+			// 	.on("touchstart", function () {
+			// 		$(this).slick("slickPlay");
+			// 	});
+		function createSlick() {
+			// carousel chỉ chạy ở sp
+			$(".sec4-slide-inner")
+				.not(".slick-initialized")
 				.slick({
+					dots: false,
+					infinite: true,
+					arrows: true,
+					autoplay: false,
 					fade: true,
-					autoplay: true,
-					arrows: false,
-					dots: true,
-					pauseOnHover: false,
-					pauseOnFocus: false,
 					speed: 1000,
-				})
-				.on("touchstart", function () {
-					$(this).slick("slickPlay");
+					responsive: [
+						{
+							breakpoint: 9999,
+							settings: "unslick",
+						},
+						{
+							breakpoint: 767,
+							settings: "getslick",
+						},
+					],
 				});
+		}
+		createSlick();
+		$(window).resize(function () {
+			createSlick();
+		});
 			/*  const controller = new ScrollMagic.Controller()
 new ScrollMagic.Scene({
 triggerElement: ".slick-fade",
